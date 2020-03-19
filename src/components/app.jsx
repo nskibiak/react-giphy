@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import SearchBar from './search_bar.jsx'
-import Gif from './gif.jsx'
+import SearchBar from './search_bar.jsx';
+import Gif from './gif.jsx';
+import GifList from '.gif-list.jsx';
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
         <div className="left-scene">
           <SearchBar />
           <div className="selected-gif">
-            <Gif />
+            <Gif id='d2ZfqZY5eSCR0rza'/>
           </div>
         </div>
         <div className="right-scene"></div>
