@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import giphy from 'giphy-api';
 
-import SearchBar from './search_bar.jsx';
-import Gif from './gif.jsx';
-import GifList from './gif_list.jsx';
+import SearchBar from './search_bar';
+import Gif from './gif';
+import GifList from './gif_list';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,22 @@ class App extends Component {
       gifs: [],
       selectedGifId: 'd2ZfqZY5eSCR0rza'
     }
+
+    this.search('homer thinking');
   }
+
+  search = (query) => {
+    giphy('Hx9jDJ8h2fEEf1mtmxTOKTIP9B25k0ee').search({
+      q: query,
+      rating: 'g'
+    }, (error, result) => {
+      this.setState({
+      gifs: result.data
+      });
+    }
+  );
+  }
+
   render() {
     const gifs = [
       {id: 'd2ZfqZY5eSCR0rza'},
