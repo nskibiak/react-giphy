@@ -4,7 +4,9 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-
+    this.state = {
+      term: ""
+    }
   }
 
   handleChange = (event) => {
@@ -15,6 +17,7 @@ class SearchBar extends Component {
     return (
       <input
         type="text"
+        value={this.state.term}
         className="form-search form-control"
         onChange={this.handleChange}
       />
