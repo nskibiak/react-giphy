@@ -6,11 +6,12 @@ class SearchBar extends Component {
 
     this.state = {
       term: ""
-    }
+    };
   }
 
   handleChange = (event) => {
     this.props.searchFunction(event.target.value);
+    this.setState(this.state.term = event.target.value);
   }
 
   render() {
