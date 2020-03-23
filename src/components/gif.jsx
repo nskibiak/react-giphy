@@ -7,8 +7,15 @@ class Gif extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    const { id } = this.props;
+    return nextProps.id !== id;
+  }
+
   render() {
     const { id } = this.props;
+
+    console.log('RENDERED GIF ID ' + id);
 
     const src = `https://media2.giphy.com/media/${id}/200.gif`;
     return (
