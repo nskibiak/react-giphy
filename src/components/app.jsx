@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      selectedGifId: null
+      selectedGifId: 'xT9IgDEI1iZyb2wqo8'
     };
 
     this.search('chocolate');
@@ -40,11 +40,6 @@ class App extends Component {
 
   render() {
     const { selectedGifId, gifs } = this.state;
-
-    if (!selectedGifId) {
-      return null;
-    }
-
     return (
       <div>
         <div className="left-scene">
