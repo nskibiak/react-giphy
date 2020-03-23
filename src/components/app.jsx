@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      selectedGifId: 'xT9IgDEI1iZyb2wqo8'
+      selectedGifId: null
     };
 
     this.search('chocolate');
@@ -39,16 +39,22 @@ class App extends Component {
   }
 
   render() {
+    const { selectedGifId, gifs } = this.state;
+
+    if (!selectedGifId) {
+      return null;
+    }
+
     return (
       <div>
         <div className="left-scene">
           <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
-            <Gif id={this.state.selectedGifId} />
+            <Gif id={selectedGifId} />
           </div>
         </div>
         <div className="right-scene">
-          <GifList selectGif={this.selectGif} gifs={this.state.gifs} />
+          <GifList selectGif={this.selectGif} gifs={gifs} />
         </div>
       </div>
     );
