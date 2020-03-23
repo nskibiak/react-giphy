@@ -9,6 +9,10 @@ class SearchBar extends Component {
     };
   }
 
+  componentWillMount() {
+    console.log('componentWillMount has been called');
+  }
+
   handleChange = (event) => {
     this.props.searchFunction(event.target.value);
     this.setState(this.state.term = event.target.value);
@@ -24,7 +28,6 @@ class SearchBar extends Component {
       />
     );
   }
-
 }
 
 export default SearchBar;
